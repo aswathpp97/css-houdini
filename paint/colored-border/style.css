@@ -1,0 +1,9 @@
+.color-border {
+  --stroke-width: 10;
+  width: 500px;
+  height: 300px;
+  border: none;
+  background-image: paint(color-border, purple, red, yellow, green);
+  background-color: palevioletred;
+  color: white;
+}

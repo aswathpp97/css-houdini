@@ -1,0 +1,53 @@
+@property --gap {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --no-of-columns {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --max-row-height {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 100;
+}
+
+@property --min-row-height {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 50;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.container {
+  display: layout(centering);
+  --no-of-columns: 5;
+  --max-row-height: 200px;
+  --min-row-height: 100px;
+  --gap: 10px;
+}
+
+.child {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  /* width: 100%; */
+  display: block;
+  max-width: 100%;
+  border: 1px solid white;
+}
+
+[selector] {
+  display: layout(layout-name);
+}

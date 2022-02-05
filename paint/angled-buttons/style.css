@@ -1,0 +1,9 @@
+.angled {
+  --corner-radius: 0 10 0 0;
+  --paint-color: red;
+  padding: 10px 25px;
+  border: none;
+  background-color: white;
+  background-image: paint(angled-corners);
+  color: white;
+}

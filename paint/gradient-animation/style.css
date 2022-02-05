@@ -1,0 +1,27 @@
+@property --color-stop {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 45%;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to right, orange var(--color-stop), red);
+  transition: --color-stop 300ms;
+}
+
+.gradient:hover {
+  --color-stop: 100%;
+}

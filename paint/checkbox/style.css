@@ -1,0 +1,35 @@
+:root {
+  --transition-speed: 500ms;
+  --primary-color: hsl(301, 96%, 31%);
+  --primary-light-color: hsl(301, 96%, 41%);
+
+  --primary-background-color: hsl(217, 0%, 60%);
+  --primary-light-background-color: hsl(217, 0%, 70%);
+
+  --checkbox-size: 40px;
+}
+
+.checkbox {
+  background-color: var(--primary-background-color);
+  --check-color: var(--primary-background-color);
+  border-radius: 5%;
+
+  transition: background-color var(--transition-speed),
+    --check-color var(--transition-speed);
+
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  -webkit-appearance: none;
+  background-image: paint(checkbox);
+}
+
+.checkbox:hover {
+  background-color: hsl(217, 0%, 50%);
+  --check-color: var(--primary-light-background-color);
+}
+
+.checkbox:checked {
+  --checkbox-status: true;
+  background-color: var(--primary-color);
+  --check-color: white;
+}
