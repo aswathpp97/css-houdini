@@ -7,25 +7,7 @@ registerLayout(
       "--max-row-height",
       "--min-row-height",
     ];
-    async intrinsicSizes(children, edges, styleMap) {
-      const childrenSizes = await Promise.all(
-        children.map((child) => {
-          return child.intrinsicSizes();
-        })
-      );
-
-      const maxContentSize =
-        childrenSizes.reduce((sum, childSizes) => {
-          return sum + childSizes.maxContentSize;
-        }, 0) + edges.inline;
-
-      const minContentSize =
-        childrenSizes.reduce((max, childSizes) => {
-          return sum + childSizes.minContentSize;
-        }, 0) + edges.inline;
-
-      return { maxContentSize, minContentSize };
-    }
+    async intrinsicSizes(children, edges, styleMap) {}
 
     async layout(children, edges, constraints, styleMap) {
       try {
@@ -33,7 +15,7 @@ registerLayout(
         const columns = parseInt(styleMap.get("--no-of-columns"));
         const minHeight = parseInt(styleMap.get("--min-row-height"));
         const maxHeight = parseInt(styleMap.get("--max-row-height"));
-        console.log({ gap, columns, minHeight, maxHeight });
+
         const availableInlineSize = constraints.fixedInlineSize - edges.inline;
         const availableBlockSize = constraints.fixedBlockSize
           ? constraints.fixedBlockSize - edges.block
